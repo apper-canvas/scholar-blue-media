@@ -4,14 +4,18 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
+theme: {
     extend: {
       colors: {
         primary: '#2563EB',
         secondary: '#10B981',
         accent: '#F59E0B',
         surface: '#F8FAFC',
-        background: '#FFFFFF',
+        background: 'rgb(var(--background) / <alpha-value>)',
+        foreground: 'rgb(var(--foreground) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
+        'muted-foreground': 'rgb(var(--muted-foreground) / <alpha-value>)',
+        border: 'rgb(var(--border) / <alpha-value>)',
         success: '#22C55E',
         warning: '#F59E0B',
         error: '#EF4444',
