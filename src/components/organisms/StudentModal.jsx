@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
-import { studentsService } from '@/services/api/studentsService';
-import Button from '@/components/atoms/Button';
-import FormField from '@/components/molecules/FormField';
-import ApperIcon from '@/components/ApperIcon';
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import ApperIcon from "@/components/ApperIcon";
+import Button from "@/components/atoms/Button";
+import FormField from "@/components/molecules/FormField";
+import { studentsService } from "@/services/api/studentsService";
 
 const StudentModal = ({ isOpen, onClose, student, onSave }) => {
   const [formData, setFormData] = useState({
@@ -110,19 +110,24 @@ const handleSubmit = async (e) => {
         email: formData.email.trim().toLowerCase()
       };
 
-      let result;
+let result;
       if (student) {
         result = await studentsService.update(student.Id, submitData);
       } else {
         result = await studentsService.create(submitData);
       }
-
+      
       if (result) {
         toast.success(student ? 'Student updated successfully' : 'Student created successfully');
-        onSave();
+        
+        // Safely call onSave if it's a function
+        if (typeof onSave === 'function') {
+          onSave();
+        } else {
+          console.warn('StudentModal: onSave prop is not a function');
+        }
+        
         onClose();
-      } else {
-        toast.error('Failed to save student record. Please try again.');
       }
     } catch (error) {
       console.error('Student save error:', error);
