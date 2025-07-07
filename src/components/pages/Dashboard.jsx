@@ -8,15 +8,11 @@ import Grades from "@/components/pages/Grades";
 import Attendance from "@/components/pages/Attendance";
 import Reports from "@/components/pages/Reports";
 import StatCard from "@/components/molecules/StatCard";
-import assignmentsData from "@/services/mockData/assignments.json";
-import attendanceData from "@/services/mockData/attendance.json";
-import gradesData from "@/services/mockData/grades.json";
-import classesData from "@/services/mockData/classes.json";
-import studentsData from "@/services/mockData/students.json";
 import { attendanceService } from "@/services/api/attendanceService";
 import { gradesService } from "@/services/api/gradesService";
 import { classesService } from "@/services/api/classesService";
 import { studentsService } from "@/services/api/studentsService";
+
 const Dashboard = () => {
   const [stats, setStats] = useState({
     totalStudents: 0,
