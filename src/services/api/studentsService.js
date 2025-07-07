@@ -14,11 +14,11 @@ export const studentsService = {
     return student ? { ...student } : null;
   },
 
-  async create(studentData) {
+async create(studentData) {
     await new Promise(resolve => setTimeout(resolve, 400));
     const newStudent = {
       ...studentData,
-      Id: Math.max(...students.map(s => s.Id)) + 1,
+      Id: students.length > 0 ? Math.max(...students.map(s => s.Id)) + 1 : 1,
       enrollmentDate: new Date().toISOString().split('T')[0],
       status: 'active'
     };
