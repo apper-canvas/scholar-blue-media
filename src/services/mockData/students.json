@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 1,
+    "firstName": "Emma",
+    "lastName": "Johnson",
+    "grade": 10,
+    "dateOfBirth": "2008-03-15",
+    "email": "emma.johnson@email.com",
+    "phone": "(555) 123-4567",
+    "address": "123 Oak Street, Springfield, IL 62701",
+    "enrollmentDate": "2023-08-15",
+    "status": "active"
+  },
+  {
+    "Id": 2,
+    "firstName": "Michael",
+    "lastName": "Chen",
+    "grade": 11,
+    "dateOfBirth": "2007-09-22",
+    "email": "michael.chen@email.com",
+    "phone": "(555) 234-5678",
+    "address": "456 Maple Avenue, Springfield, IL 62702",
+    "enrollmentDate": "2022-08-20",
+    "status": "active"
+  },
+  {
+    "Id": 3,
+    "firstName": "Sarah",
+    "lastName": "Williams",
+    "grade": 9,
+    "dateOfBirth": "2009-01-10",
+    "email": "sarah.williams@email.com",
+    "phone": "(555) 345-6789",
+    "address": "789 Pine Road, Springfield, IL 62703",
+    "enrollmentDate": "2023-08-15",
+    "status": "active"
+  },
+  {
+    "Id": 4,
+    "firstName": "David",
+    "lastName": "Brown",
+    "grade": 12,
+    "dateOfBirth": "2006-11-05",
+    "email": "david.brown@email.com",
+    "phone": "(555) 456-7890",
+    "address": "321 Elm Street, Springfield, IL 62704",
+    "enrollmentDate": "2021-08-18",
+    "status": "active"
+  },
+  {
+    "Id": 5,
+    "firstName": "Jessica",
+    "lastName": "Garcia",
+    "grade": 10,
+    "dateOfBirth": "2008-07-28",
+    "email": "jessica.garcia@email.com",
+    "phone": "(555) 567-8901",
+    "address": "654 Cedar Lane, Springfield, IL 62705",
+    "enrollmentDate": "2023-08-15",
+    "status": "active"
+  },
+  {
+    "Id": 6,
+    "firstName": "Ryan",
+    "lastName": "Miller",
+    "grade": 11,
+    "dateOfBirth": "2007-12-12",
+    "email": "ryan.miller@email.com",
+    "phone": "(555) 678-9012",
+    "address": "987 Birch Drive, Springfield, IL 62706",
+    "enrollmentDate": "2022-08-20",
+    "status": "active"
+  },
+  {
+    "Id": 7,
+    "firstName": "Amanda",
+    "lastName": "Davis",
+    "grade": 9,
+    "dateOfBirth": "2009-04-18",
+    "email": "amanda.davis@email.com",
+    "phone": "(555) 789-0123",
+    "address": "147 Walnut Street, Springfield, IL 62707",
+    "enrollmentDate": "2023-08-15",
+    "status": "active"
+  },
+  {
+    "Id": 8,
+    "firstName": "Kevin",
+    "lastName": "Wilson",
+    "grade": 12,
+    "dateOfBirth": "2006-08-03",
+    "email": "kevin.wilson@email.com",
+    "phone": "(555) 890-1234",
+    "address": "258 Hickory Avenue, Springfield, IL 62708",
+    "enrollmentDate": "2021-08-18",
+    "status": "active"
+  },
+  {
+    "Id": 9,
+    "firstName": "Olivia",
+    "lastName": "Anderson",
+    "grade": 10,
+    "dateOfBirth": "2008-06-14",
+    "email": "olivia.anderson@email.com",
+    "phone": "(555) 901-2345",
+    "address": "369 Poplar Road, Springfield, IL 62709",
+    "enrollmentDate": "2023-08-15",
+    "status": "active"
+  },
+  {
+    "Id": 10,
+    "firstName": "James",
+    "lastName": "Taylor",
+    "grade": 11,
+    "dateOfBirth": "2007-02-25",
+    "email": "james.taylor@email.com",
+    "phone": "(555) 012-3456",
+    "address": "741 Spruce Lane, Springfield, IL 62710",
+    "enrollmentDate": "2022-08-20",
+    "status": "active"
+  }
+]

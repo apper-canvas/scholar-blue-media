@@ -1,0 +1,62 @@
+[
+  {
+    "Id": 1,
+    "name": "Algebra II",
+    "subject": "Mathematics",
+    "period": 1,
+    "room": "101",
+    "semester": "Fall",
+    "year": 2024,
+    "teacherId": "teacher1"
+  },
+  {
+    "Id": 2,
+    "name": "English Literature",
+    "subject": "English",
+    "period": 2,
+    "room": "205",
+    "semester": "Fall",
+    "year": 2024,
+    "teacherId": "teacher2"
+  },
+  {
+    "Id": 3,
+    "name": "Chemistry",
+    "subject": "Science",
+    "period": 3,
+    "room": "301",
+    "semester": "Fall",
+    "year": 2024,
+    "teacherId": "teacher3"
+  },
+  {
+    "Id": 4,
+    "name": "World History",
+    "subject": "History",
+    "period": 4,
+    "room": "202",
+    "semester": "Fall",
+    "year": 2024,
+    "teacherId": "teacher4"
+  },
+  {
+    "Id": 5,
+    "name": "Biology",
+    "subject": "Science",
+    "period": 5,
+    "room": "302",
+    "semester": "Fall",
+    "year": 2024,
+    "teacherId": "teacher5"
+  },
+  {
+    "Id": 6,
+    "name": "Pre-Calculus",
+    "subject": "Mathematics",
+    "period": 6,
+    "room": "102",
+    "semester": "Fall",
+    "year": 2024,
+    "teacherId": "teacher1"
+  }
+]

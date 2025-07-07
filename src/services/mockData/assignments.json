@@ -1,0 +1,62 @@
+[
+  {
+    "Id": 1,
+    "classId": "1",
+    "name": "Quadratic Equations Test",
+    "type": "test",
+    "totalPoints": 100,
+    "dueDate": "2024-02-15",
+    "category": "assessment",
+    "weight": 0.3
+  },
+  {
+    "Id": 2,
+    "classId": "1",
+    "name": "Homework Set 1",
+    "type": "homework",
+    "totalPoints": 20,
+    "dueDate": "2024-02-01",
+    "category": "homework",
+    "weight": 0.2
+  },
+  {
+    "Id": 3,
+    "classId": "2",
+    "name": "Essay: Character Analysis",
+    "type": "essay",
+    "totalPoints": 50,
+    "dueDate": "2024-02-10",
+    "category": "writing",
+    "weight": 0.4
+  },
+  {
+    "Id": 4,
+    "classId": "2",
+    "name": "Reading Quiz Ch. 1-5",
+    "type": "quiz",
+    "totalPoints": 25,
+    "dueDate": "2024-02-05",
+    "category": "assessment",
+    "weight": 0.1
+  },
+  {
+    "Id": 5,
+    "classId": "3",
+    "name": "Lab Report: Acids and Bases",
+    "type": "lab",
+    "totalPoints": 40,
+    "dueDate": "2024-02-12",
+    "category": "lab",
+    "weight": 0.3
+  },
+  {
+    "Id": 6,
+    "classId": "3",
+    "name": "Midterm Exam",
+    "type": "exam",
+    "totalPoints": 150,
+    "dueDate": "2024-02-20",
+    "category": "assessment",
+    "weight": 0.4
+  }
+]
