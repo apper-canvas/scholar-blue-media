@@ -16,24 +16,63 @@ export const studentsService = {
 
 async create(studentData) {
     await new Promise(resolve => setTimeout(resolve, 400));
+    
+    // Validate required fields
+    if (!studentData.firstName || !studentData.lastName || !studentData.email || !studentData.grade) {
+      throw new Error('validation: Missing required fields');
+    }
+    
+    // Check for duplicate email
+    const existingStudent = students.find(s => 
+      s.email.toLowerCase() === studentData.email.toLowerCase()
+    );
+    if (existingStudent) {
+      throw new Error('duplicate: Student with this email already exists');
+    }
+    
+    // Validate grade range
+    if (studentData.grade < 9 || studentData.grade > 12) {
+      throw new Error('validation: Grade must be between 9 and 12');
+    }
+    
     const newStudent = {
       ...studentData,
       Id: students.length > 0 ? Math.max(...students.map(s => s.Id)) + 1 : 1,
       enrollmentDate: new Date().toISOString().split('T')[0],
-      status: 'active'
+      status: studentData.status || 'active'
     };
     students.push(newStudent);
     return { ...newStudent };
   },
 
-  async update(id, studentData) {
+async update(id, studentData) {
     await new Promise(resolve => setTimeout(resolve, 400));
-    const index = students.findIndex(s => s.Id === parseInt(id));
-    if (index !== -1) {
-      students[index] = { ...students[index], ...studentData };
-      return { ...students[index] };
+    
+    // Validate required fields
+    if (!studentData.firstName || !studentData.lastName || !studentData.email || !studentData.grade) {
+      throw new Error('validation: Missing required fields');
     }
-    return null;
+    
+    // Validate grade range
+    if (studentData.grade < 9 || studentData.grade > 12) {
+      throw new Error('validation: Grade must be between 9 and 12');
+    }
+    
+    const index = students.findIndex(s => s.Id === parseInt(id));
+    if (index === -1) {
+      throw new Error('Student not found');
+    }
+    
+    // Check for duplicate email (excluding current student)
+    const existingStudent = students.find(s => 
+      s.email.toLowerCase() === studentData.email.toLowerCase() && s.Id !== parseInt(id)
+    );
+    if (existingStudent) {
+      throw new Error('duplicate: Student with this email already exists');
+    }
+    
+    students[index] = { ...students[index], ...studentData };
+    return { ...students[index] };
   },
 
   async delete(id) {
