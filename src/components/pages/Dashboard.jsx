@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { studentsService } from '@/services/api/studentsService';
-import { classesService } from '@/services/api/classesService';
-import { gradesService } from '@/services/api/gradesService';
-import { attendanceService } from '@/services/api/attendanceService';
-import StatCard from '@/components/molecules/StatCard';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/atoms/Card';
-import Loading from '@/components/ui/Loading';
-import Error from '@/components/ui/Error';
-import ApperIcon from '@/components/ApperIcon';
-
+import React, { useEffect, useState } from "react";
+import ApperIcon from "@/components/ApperIcon";
+import StudentModal from "@/components/organisms/StudentModal";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/atoms/Card";
+import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import Grades from "@/components/pages/Grades";
+import Attendance from "@/components/pages/Attendance";
+import Reports from "@/components/pages/Reports";
+import StatCard from "@/components/molecules/StatCard";
+import assignmentsData from "@/services/mockData/assignments.json";
+import attendanceData from "@/services/mockData/attendance.json";
+import gradesData from "@/services/mockData/grades.json";
+import classesData from "@/services/mockData/classes.json";
+import studentsData from "@/services/mockData/students.json";
+import { attendanceService } from "@/services/api/attendanceService";
+import { gradesService } from "@/services/api/gradesService";
+import { classesService } from "@/services/api/classesService";
+import { studentsService } from "@/services/api/studentsService";
 const Dashboard = () => {
   const [stats, setStats] = useState({
     totalStudents: 0,
@@ -19,7 +27,7 @@ const Dashboard = () => {
   const [recentActivity, setRecentActivity] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-
+  const [isStudentModalOpen, setIsStudentModalOpen] = useState(false);
   useEffect(() => {
     loadDashboardData();
   }, []);
@@ -69,6 +77,19 @@ const Dashboard = () => {
     } finally {
       setLoading(false);
     }
+};
+
+  const handleAddStudent = () => {
+    setIsStudentModalOpen(true);
+  };
+
+  const handleStudentModalClose = () => {
+    setIsStudentModalOpen(false);
+  };
+
+  const handleStudentCreated = () => {
+    setIsStudentModalOpen(false);
+    loadDashboardData(); // Refresh dashboard data
   };
 
   if (loading) {
@@ -79,7 +100,8 @@ const Dashboard = () => {
     return <Error message={error} onRetry={loadDashboardData} />;
   }
 
-  return (
+return (
+    <>
     <div className="space-y-6">
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -144,8 +166,11 @@ const Dashboard = () => {
             <CardTitle>Quick Actions</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
-              <button className="w-full p-3 text-left rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
+<div className="space-y-3">
+              <button 
+                onClick={handleAddStudent}
+                className="w-full p-3 text-left rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+              >
                 <div className="flex items-center gap-3">
                   <ApperIcon name="UserPlus" className="h-5 w-5 text-primary" />
                   <span className="font-medium">Add New Student</span>
@@ -213,8 +238,15 @@ const Dashboard = () => {
             </div>
           </div>
         </CardContent>
-      </Card>
-    </div>
+</Card>
+      </div>
+      
+      <StudentModal
+        isOpen={isStudentModalOpen}
+        onClose={handleStudentModalClose}
+        onSuccess={handleStudentCreated}
+      />
+    </>
   );
 };
 
